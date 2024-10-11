@@ -102,4 +102,3 @@ fun Configurator(
         label = { Text("Majority group max particle radius (dp)") }
     )
 }
-0
