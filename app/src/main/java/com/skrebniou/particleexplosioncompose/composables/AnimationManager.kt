@@ -28,7 +28,7 @@ fun AnimationManager(size: Int) {
                 size = size-40, // -40 is because of layout's padding
                 particleAmount = 150,
                 color = Color.Red,
-                velocityIndex = 4f,
+                velocityIndex = 1f,
                 accelerationIndex = 2f,
                 initialDisplacementRange = 10f,
                 delayBeforeStartMax = 0.14f,

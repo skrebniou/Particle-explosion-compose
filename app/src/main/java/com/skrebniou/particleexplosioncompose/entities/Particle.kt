@@ -14,7 +14,7 @@ class Particle(
     val startYPosition: Int,
     val maxHorizontalDisplacement: Float,
     val maxVerticalDisplacement: Float,
-    val velocityIndex: Float, // def = 4f
+    val velocityIndex: Float, // def = 1f
     val accelerationIndex: Float, // def = 2f
     val initialDisplacementRange: Float, // def = 10f
     val delayBeforeStartMax: Float, // def = 0.14f
@@ -23,7 +23,7 @@ class Particle(
     val minorityGroupMaxRadius: Float, // def = 7f
     val majorityGroupMaxRadius: Float // def = 1.5f
 ) {
-    val velocity = velocityIndex * maxVerticalDisplacement
+    val velocity = velocityIndex * 4 * maxVerticalDisplacement
     val acceleration = -accelerationIndex * velocity
     var currentXPosition = 0f
     var currentYPosition = 0f
