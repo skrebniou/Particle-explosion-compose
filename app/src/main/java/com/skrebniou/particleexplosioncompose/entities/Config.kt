@@ -4,6 +4,8 @@ import androidx.compose.ui.graphics.Color
 import com.skrebniou.particleexplosioncompose.colorToHex
 
 data class Config(
+    var xPos: Int,
+    var yPos: Int,
     var size: Int,
     var particleAmount: Int,
     var color: Color,
@@ -18,6 +20,8 @@ data class Config(
 ) {
     fun toConfigParsable(): ConfigParsable {
         return ConfigParsable(
+            xPos = this.xPos.toString(),
+            yPos = this.yPos.toString(),
             size = this.size.toString(),
             particleAmount = this.particleAmount.toString(),
             color = colorToHex(this.color),

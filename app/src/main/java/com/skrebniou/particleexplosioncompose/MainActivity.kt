@@ -12,7 +12,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         val displayMetrics = getResources().getDisplayMetrics()
         setContent {
-            AnimationManager((displayMetrics.widthPixels / displayMetrics.density).toInt())
+            AnimationManager((displayMetrics.widthPixels / displayMetrics.density).toInt()-40)
+            // -40 for layout padding
         }
     }
 }

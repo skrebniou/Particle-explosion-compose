@@ -59,8 +59,8 @@ class Particle(
         val verticalDisplacement =
             (currentTime * velocity + 0.5 * acceleration * currentTime.toDouble()
                 .pow(2.0)).toFloat()
-        currentYPosition = startXPosition + initialXDisplacement - verticalDisplacement
+        currentYPosition = startYPosition + initialYDisplacement - verticalDisplacement
         currentXPosition =
-            startYPosition + initialYDisplacement + maxHorizontalDisplacement * trajectoryProgress
+            startXPosition + initialXDisplacement + maxHorizontalDisplacement * trajectoryProgress
     }
 }

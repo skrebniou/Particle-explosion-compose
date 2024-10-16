@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.skrebniou.particleexplosioncompose.entities.Config
+import com.skrebniou.particleexplosioncompose.toPx
 
 @Composable
 fun AnimationManager(size: Int) {
@@ -25,7 +26,9 @@ fun AnimationManager(size: Int) {
     var config by remember {
         mutableStateOf(
             Config(
-                size = size-40, // -40 is because of layout's padding
+                xPos = (size.dp.toPx() / 2).toInt(),
+                yPos = (size.dp.toPx() / 2).toInt(),
+                size = size,
                 particleAmount = 150,
                 color = Color.Red,
                 velocityIndex = 1f,

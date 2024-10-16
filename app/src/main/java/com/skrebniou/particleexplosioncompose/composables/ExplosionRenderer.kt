@@ -24,8 +24,8 @@ fun ExplosionRenderer(progress: Float, config: Config) {
         List(config.particleAmount) {
             Particle(
                 config.color,
-                sizePxHalf.toInt(),
-                sizePxHalf.toInt(),
+                config.xPos,
+                config.yPos,
                 sizePx * randomInRange(-0.9f, 0.9f),
                 sizePx * randomInRange(0.2f, 0.38f),
                 config.velocityIndex,

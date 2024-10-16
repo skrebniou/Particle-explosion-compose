@@ -3,6 +3,8 @@ package com.skrebniou.particleexplosioncompose.entities
 import com.skrebniou.particleexplosioncompose.hexToColor
 
 data class ConfigParsable(
+    var xPos: String,
+    var yPos: String,
     var size: String,
     var particleAmount: String,
     var color: String,
@@ -17,6 +19,8 @@ data class ConfigParsable(
 ) {
     fun toConfig(): Config {
         return Config(
+            xPos = this.xPos.toInt(),
+            yPos = this.yPos.toInt(),
             size = this.size.toInt(),
             particleAmount = this.particleAmount.toInt(),
             color = hexToColor(this.color),
