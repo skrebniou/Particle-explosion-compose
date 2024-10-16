@@ -28,8 +28,8 @@ class Particle(
     var currentXPosition = 0f
     var currentYPosition = 0f
 
-    var gapBeforeStart = randomInRange(0f, delayBeforeStartMax)
-    var gapBeforeEnd = randomInRange(0f, delayBeforeEndMax)
+    var delayBeforeStart = randomInRange(0f, delayBeforeStartMax)
+    var delayBeforeEnd = randomInRange(0f, delayBeforeEndMax)
 
     val initialXDisplacement = initialDisplacementRange.dp.toPx() * randomInRange(-1f, 1f)
     val initialYDisplacement = initialDisplacementRange.dp.toPx() * randomInRange(-1f, 1f)
@@ -45,9 +45,9 @@ class Particle(
 
     fun updateProgress(explosionProgress: Float) {
         val trajectoryProgress =
-            if (explosionProgress < gapBeforeStart || (explosionProgress > (1 - gapBeforeEnd))) {
+            if (explosionProgress < delayBeforeStart || (explosionProgress > (1 - delayBeforeEnd))) {
                 alpha = 0f; return
-            } else (explosionProgress - gapBeforeStart).mapInRange(0f,1f - gapBeforeEnd - gapBeforeStart,0f, 1f)
+            } else (explosionProgress - delayBeforeStart).mapInRange(0f,1f - delayBeforeEnd - delayBeforeStart,0f, 1f)
         alpha = if (trajectoryProgress < 0.7f) 1f else (trajectoryProgress - 0.7f).mapInRange(
             0f,
             0.3f,
